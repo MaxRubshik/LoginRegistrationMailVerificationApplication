@@ -13,11 +13,12 @@ public class RegistrationController {
     @PostMapping
     public String register(@RequestBody RegistrationRequest request){
 
-        return registrationService.register(request);
+        return registrationService.register(request)  + "This is register page.";
     }
 
     @GetMapping(path = "confirm")
     public String confirm(@RequestParam("token")String token) {
-        return registrationService.confirmToken(token);
+
+        return registrationService.confirmToken(token)  + "This is confirm page.";
     }
 }
